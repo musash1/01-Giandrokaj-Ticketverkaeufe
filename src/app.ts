@@ -1,5 +1,6 @@
 import express from "express";
 import { PrismaClient } from "@prisma/client";
+import path from 'path';
 
 const app = express();
 const prisma = new PrismaClient();
@@ -19,5 +20,7 @@ app.get("/", async (req, res) => {
 });
 
 app.set("view engine", "ejs");
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
