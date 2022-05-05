@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./salesRegister.css">
+    <link rel="stylesheet" href="./salesRegister.style.css">
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1 class="test">Giandrokaj Ticketverkauf</h1>
     </header>
+    <main>
+        <form method="post">
+            <fieldset>
+                <legend>Kauf erfassen</legend>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="E-Mail">
+
+                <label for="telefon">Telefonnummer</label>
+                <input type="tel" id="telefon" name="telefon" placeholder="Telefonnummer">
+
+                <label for="konzert">Konzert</label>
+                <select id="konzert" name="konzert">
+                    <option value="">Konzert auswählen</option>
+                    <option value="1">Konzert 1</option>
+                    <option value="2">Konzert 2</option>
+                    <option value="3">Konzert 3</option>
+            </fieldset>
+        </form>
+    </main>
 </body>
 </html>
