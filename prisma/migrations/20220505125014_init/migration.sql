@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "ticketkauf" ALTER COLUMN "treuebonus" SET DATA TYPE DOUBLE PRECISION;
