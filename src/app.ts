@@ -15,7 +15,7 @@ app.get("/", async (req, res) => {
       konzert: "Sido",
     }
   });
-  res.render(__dirname + '/public/views/index.ejs');
+  res.render(__dirname + '/views/salesRegister.ejs');
 });
 
 app.set("view engine", "ejs");
