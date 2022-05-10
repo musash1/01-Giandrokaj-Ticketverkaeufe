@@ -1,10 +1,15 @@
-.registerSalesForm{
-    display: grid;
-    grid-template-columns: 20% 80%;
+.registerSalesForm {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-bottom: 30px;
 }
-.registerSalesForm label, input{
-    margin-bottom: 10px;
+
+label {
+    margin-top: 10px;
 }
-.registerSalesForm input{
-    height: 25px;
+
+.button {
+    display: flex;
+    justify-content: flex-end;
 }

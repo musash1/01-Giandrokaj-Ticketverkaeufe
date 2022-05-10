@@ -24,8 +24,9 @@ router.post("/:id", async (req, res) => {
             email: req.body.email,
             telefon: req.body.telefon,
             treuebonus: req.body.treuebonus,
-            konzertId: req.body.konzert,
+            konzertId: Number(req.body.konzert),
         }
     })
+    res.redirect("/ticket-anzeigen");
 });
 export = router;

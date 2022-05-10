@@ -6,6 +6,7 @@ import indexRouter from "./routers/index.router";
 import createRouter from "./routers/create.router";
 import readRouter from "./routers/read.router";
 import editRouter from "./routers/edit.router";
+import deleteRouter from "./routers/delete.router";
 
 const app = express();
 const prisma = new PrismaClient();
@@ -24,6 +25,7 @@ app.use('/', indexRouter);
 app.use('/ticket-erfassen', createRouter);
 app.use('/ticket-anzeigen', readRouter);
 app.use('/edit', editRouter);
+app.use('/delete', deleteRouter);
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
