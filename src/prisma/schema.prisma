@@ -20,6 +20,7 @@ model ticketkauf{
 }
 model konzert{
   id Int @id @default(autoincrement())
+  artist String
   konzertName String
   tickets ticketkauf[]
 }
