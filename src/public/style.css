@@ -8,8 +8,6 @@ body {
 
 main {
     margin: 10px;
-    display: flex;
-    justify-content: center;
 }
 
 header {
