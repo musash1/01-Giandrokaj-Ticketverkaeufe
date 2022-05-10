@@ -1,5 +1,5 @@
 *{
-    font-family: 'kanit', sans-serif;
+    font-family: kanit, sans-serif;
 }
 
 body {
@@ -8,6 +8,8 @@ body {
 
 main {
     margin: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 header {
