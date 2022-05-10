@@ -15,13 +15,14 @@
             <th>Treuebonus</th>
             <th>Konzert</th>
         </tr>
+            
             <% for (let i = 0; i < tickets.length; i++){ %>
                 <tr>
                     <td><%- tickets[i].name  %> </td> 
                     <td><%- tickets[i].email  %> </td>
                     <td><%- tickets[i].telefon  %> </td>
                     <td><%- tickets[i].treuebonus  %> </td>
-                    <td><%-  %> </td>
+                    <td><%- konzert[tickets[i].konzertId - 1].artist  %> </td>
                 </tr>
             <% } %> 
         
