@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Lato:wght@300&family=Roboto:wght@300&display=swap"
         rel="stylesheet">
@@ -18,39 +16,39 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="test">Giandrokaj Ticketverkauf</h1>
-        <a href="/ticket-anzeigen" class="link">Ticket Sales</a>
-    </header>
     <main>
         <form method="post">
             <div class="registerSalesForm">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+                <input type="text" id="name" name="name" class="form-control" placeholder="Name"
+                    value="<%- ticket.name %>">
 
                 <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail">
+                <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail"
+                    value="<%- ticket.email %>">
 
                 <label for="telefon">Telefonnummer</label>
-                <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefonnummer">
+                <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefonnummer"
+                    value="<%- ticket.telefon %>">
                 <label for="zahlungsstatus">Zahlungsstatus</label>
                 <div class="radio-full-form" name="zahlungsstatus">
                     <div>
-                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt">
+                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt" <% if(ticket.zahlungsstatus == "Bezahlt"){ %> checked <% } %>  >
                         <label for="bezahlt">Bezahlt</label>
                     </div>
                     <div>
-                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt">
+                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt" <% if(ticket.zahlungsstatus == "Nicht bezahlt"){ %> checked <% } %>>
                         <label for="nicht_bezahlt">Nicht bezahlt</label>
                     </div>
                 </div>
                 <label for="treuebonus">Treuebonus</label>
                 <select name="treuebonus" id="treuebonus" class="form-select">
-                    <option value="30">Kein Rabatt</option>
-                    <option value="20">5% Rabatt</option>
-                    <option value="15">10% Rabatt</option>
-                    <option value="10">15% Rabatt</option>
+                    <option value="30" <% if (ticket.treuebonus == 30){ %> selected <% } %>>Kein Rabatt</option>
+                    <option value="20" <% if (ticket.treuebonus == 20){ %> selected <% } %>>5% Rabatt</option>
+                    <option value="15" <% if (ticket.treuebonus == 15){ %> selected <% } %>>10% Rabatt</option>
+                    <option value="10" <% if (ticket.treuebonus == 10){ %> selected <% } %>>15% Rabatt</option>
                 </select>
+
                 <label for="konzert">Konzert</label>
                 <select id="konzert" class="form-select" name="konzert">
                     <% for (let i=0; i < concerts.length; i++){ %>
@@ -60,7 +58,12 @@
                         <% } %>
                 </select>
             </div>
-            <button class="btn btn-primary button">Verkauf speichern</button>
+            <div class="ticket-buttons">
+                <a href="/ticket-anzeigen" class="button-link"><button onclick=""
+                        class='btn btn-danger button' type="button">Abbrechen</button></a>
+                <button class="btn btn-primary button" type="submit">Verkauf speichern</button>
+            </div>
+
         </form>
     </main>
 </body>

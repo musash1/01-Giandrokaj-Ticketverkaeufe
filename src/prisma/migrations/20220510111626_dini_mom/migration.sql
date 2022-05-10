@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "ticketkauf" ALTER COLUMN "kaufdatum" DROP NOT NULL,
+ALTER COLUMN "kaufdatum" DROP DEFAULT,
+ALTER COLUMN "kaufdatum" SET DATA TYPE TEXT;

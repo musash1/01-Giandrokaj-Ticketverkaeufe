@@ -1,0 +1,16 @@
+body {
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ticket-anzeige {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
+    width: 450px;
+}
