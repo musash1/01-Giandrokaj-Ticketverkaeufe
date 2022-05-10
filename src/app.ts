@@ -4,7 +4,6 @@ import path from 'path';
 import bodyParser from "body-parser";
 import indexRouter from "./routers/index.router";
 import createRouter from "./routers/create.router";
-import { parentPort } from "worker_threads";
 
 const app = express();
 const prisma = new PrismaClient();
@@ -12,6 +11,7 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, '/public')));
 
+app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 app.use(bodyParser.json());
