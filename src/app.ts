@@ -1,5 +1,4 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
 import path from 'path';
 import bodyParser from "body-parser";
 import indexRouter from "./routers/index.router";
@@ -9,7 +8,6 @@ import editRouter from "./routers/edit.router";
 import deleteRouter from "./routers/delete.router";
 
 const app = express();
-const prisma = new PrismaClient();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, '/public')));
