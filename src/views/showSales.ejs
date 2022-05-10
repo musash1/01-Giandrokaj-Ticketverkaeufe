@@ -7,22 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Telefon</th>
-            <th>Treuebonus</th>
-            <th>Konzert</th>
-        </tr>
+    <a href="/">back</a>
             <% for (let i = 0; i < tickets.length; i++){ %>
-                <tr>
+                <div>
                     <td><%- tickets[i].name  %> </td> 
                     <td><%- tickets[i].email  %> </td>
                     <td><%- tickets[i].telefon  %> </td>
-                    <td><%- tickets[i].treuebonus  %> </td>
-                    <td><%-  %> </td>
-                </tr>
+                    <td><%- tickets[i].treuebonus %> </td>
+                    <td><%- konzert[tickets[i].konzertId -1].artist %> </td>
+                </div>
             <% } %> 
         
     </table>

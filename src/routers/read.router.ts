@@ -7,6 +7,7 @@ const prisma = new PrismaClient;
 router.get("/", async (req, res) => {
     const konzert = await prisma.konzert.findMany({});
     const tickets = await prisma.ticketkauf.findMany({});
+
     res.render("showSales", {tickets, konzert});
     });
 
