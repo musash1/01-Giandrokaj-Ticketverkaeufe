@@ -4,6 +4,7 @@ import path from 'path';
 import bodyParser from "body-parser";
 import indexRouter from "./routers/index.router";
 import createRouter from "./routers/create.router";
+import readRouter from "./routers/read.router";
 
 const app = express();
 const prisma = new PrismaClient();
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Routers
 app.use('/', indexRouter);
 app.use('/ticket-erfassen', createRouter);
+app.use('/ticket-anzeigen', readRouter);
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
