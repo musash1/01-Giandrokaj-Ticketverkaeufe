@@ -5,7 +5,8 @@ let router = express.Router();
 const prisma = new PrismaClient;
 
 router.get("/", async (req, res) => {
-  res.render("salesRegister");
+  const concerts = await prisma.konzert.findMany({});
+  res.render("salesRegister", {concerts});
 });
 
 router.post("/", async (req, res) => {
@@ -14,10 +15,10 @@ router.post("/", async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         telefon: req.body.telefon,
-        
+        konzertId: Number(req.body.konzert),
+        treuebonus: 0,
       }
     })
-  console.log(req.body.name);
   res.redirect("/ticket-erfassen");
 });
 

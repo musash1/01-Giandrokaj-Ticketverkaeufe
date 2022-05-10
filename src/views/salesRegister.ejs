@@ -29,9 +29,9 @@
 
                 <label for="konzert">Konzert</label>
                 <select id="konzert" name="konzert">
-                    <option value="1">Konzert 1</option>
-                    <option value="2">Konzert 2</option>
-                    <option value="3">Konzert 3</option>
+                    <% for (let i = 0; i < concerts.length; i++){ %> 
+                        <option value="<%- concerts[i].id %> "><%- concerts[i].artist %> </option>
+                    <% } %>
                 </select>
             </div>
             <button>Verkauf speichern</button>
