@@ -1,5 +1,10 @@
-header{
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-bottom: 1px solid #e5e5e5;
+.registerSalesForm{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.registerSalesForm label, input{
+    margin-bottom: 10px;
+}
+.registerSalesForm input{
+    height: 25px;
 }

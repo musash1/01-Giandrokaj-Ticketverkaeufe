@@ -9,18 +9,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-model konzert{
-  id Int @id @default(autoincrement())
-  konzertName String
-  tickets ticketkauf[]
-}
 model ticketkauf{
   id Int @id @default(autoincrement())
   name String
   email String
   telefon String
   treuebonus Float
-  konzert konzert @relation(fields: [konzertId], references: [id])
-  konzertId Int
+  konzert konzert? @relation(fields: [konzertId], references: [id])
+  konzertId Int?
+}
+model konzert{
+  id Int @id @default(autoincrement())
+  konzertName String
+  tickets ticketkauf[]
 }
 
