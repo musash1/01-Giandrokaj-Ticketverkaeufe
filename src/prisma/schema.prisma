@@ -18,7 +18,7 @@ model ticketkauf {
   treuebonus     Int?
   konzert        konzert? @relation(fields: [konzertId], references: [id])
   konzertId      Int?
-  zahlungsstatus String @default("unbezahlt")
+  zahlungsstatus String   @default("unbezahlt")
   kaufdatum      String?
   zahlenBisDatum String?
 }
@@ -27,4 +27,10 @@ model konzert {
   id      Int          @id @default(autoincrement())
   artist  String
   tickets ticketkauf[]
+}
+
+model users {
+  id       Int    @id @default(autoincrement())
+  name     String @unique
+  password String
 }
