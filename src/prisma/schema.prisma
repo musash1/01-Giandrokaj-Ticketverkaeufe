@@ -15,10 +15,12 @@ model ticketkauf {
   name           String
   email          String
   telefon        String
-  treuebonus     Float?
+  treuebonus     Int?
   konzert        konzert? @relation(fields: [konzertId], references: [id])
   konzertId      Int?
   zahlungsstatus String   @default("unbezahlt")
+  kaufdatum      String?
+  zahlenBisDatum String?
 }
 
 model konzert {

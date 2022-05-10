@@ -22,6 +22,7 @@
     <main>
         <% for (let i=0; i < tickets.length; i++){ %>
             <div class="ticket-anzeige">
+                <h3>Ticket: <%- tickets[i].id %></h3>
                 <p>
                     Name: <%- tickets[i].name %>
                 </p>
@@ -32,10 +33,16 @@
                     Telefonnummer: <%- tickets[i].telefon %>
                 </p>
                 <p>
-                    Treuebonus: <%- tickets[i].treuebonus %>
+                    Zahlungsstatus: <%- tickets[i].zahlungsstatus %>
                 </p>
                 <p>
                     Konzert: <%- konzert[tickets[i].konzertId -1].artist %>
+                </p>
+                <p>
+                    Kaufdatum: <%- tickets[i].kaufdatum %>
+                </p>
+                <p>
+                    Zahlen bis: <%- tickets[i].zahlenBisDatum %>
                 </p>
                 <div class="ticket-buttons">
                     <button onclick="location.href = '/edit/' + <%- tickets[i].id %> "

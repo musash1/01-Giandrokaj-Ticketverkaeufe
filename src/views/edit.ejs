@@ -33,14 +33,22 @@
                 <label for="zahlungsstatus">Zahlungsstatus</label>
                 <div class="radio-full-form" name="zahlungsstatus">
                     <div>
-                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt">
+                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt" <% if(ticket.zahlungsstatus == "Bezahlt"){ %> checked <% } %>  >
                         <label for="bezahlt">Bezahlt</label>
                     </div>
                     <div>
-                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt">
+                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt" <% if(ticket.zahlungsstatus == "Nicht bezahlt"){ %> checked <% } %>>
                         <label for="nicht_bezahlt">Nicht bezahlt</label>
                     </div>
                 </div>
+                <label for="treuebonus">Treuebonus</label>
+                <select name="treuebonus" id="treuebonus" class="form-select">
+                    <option value="30" <% if (ticket.treuebonus == 30){ %> selected <% } %>>Kein Rabatt</option>
+                    <option value="20" <% if (ticket.treuebonus == 20){ %> selected <% } %>>5% Rabatt</option>
+                    <option value="15" <% if (ticket.treuebonus == 15){ %> selected <% } %>>10% Rabatt</option>
+                    <option value="10" <% if (ticket.treuebonus == 10){ %> selected <% } %>>15% Rabatt</option>
+                </select>
+
                 <label for="konzert">Konzert</label>
                 <select id="konzert" class="form-select" name="konzert">
                     <% for (let i=0; i < concerts.length; i++){ %>
@@ -52,8 +60,8 @@
             </div>
             <div class="ticket-buttons">
                 <a href="/ticket-anzeigen" class="button-link"><button onclick=""
-                        class='btn btn-danger button'>Abbrechen</button></a>
-                <button class="btn btn-primary button">Verkauf speichern</button>
+                        class='btn btn-danger button' type="button">Abbrechen</button></a>
+                <button class="btn btn-primary button" type="submit">Verkauf speichern</button>
             </div>
 
         </form>
