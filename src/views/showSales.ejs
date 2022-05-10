@@ -37,8 +37,12 @@
                 <p>
                     Konzert: <%- konzert[tickets[i].konzertId -1].artist %>
                 </p>
-                <button onclick="location.href = '/edit/' + <%- tickets[i].id %> ">edit</button>
-                <button onclick="location.href = '/delete/' + <%- tickets[i].id %> ">delete</button>
+                <div class="ticket-buttons">
+                    <button onclick="location.href = '/edit/' + <%- tickets[i].id %> "
+                        class="btn btn-primary button">Edit</button>
+                    <button onclick="location.href = '/delete/' + <%- tickets[i].id %> "
+                        class='btn btn-danger button'>delete</button>
+                </div>
             </div>
             <% } %>
 

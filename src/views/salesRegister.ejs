@@ -33,13 +33,17 @@
 
                 <label for="telefon">Telefonnummer</label>
                 <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefonnummer">
-
-                <label for="bezahlt">Bezahlt</label>
-                <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt">
-
-                <label for="nicht_bezahlt">Nicht bezahlt</label>
-                <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt">
-
+                <label for="zahlungsstatus">Zahlungsstatus</label>
+                <div class="radio-full-form" name="zahlungsstatus">
+                    <div>
+                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt">
+                        <label for="bezahlt">Bezahlt</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt">
+                        <label for="nicht_bezahlt">Nicht bezahlt</label>
+                    </div>
+                </div>
                 <label for="konzert">Konzert</label>
                 <select id="konzert" class="form-select" name="konzert">
                     <% for (let i=0; i < concerts.length; i++){ %>

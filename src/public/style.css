@@ -20,6 +20,19 @@ header {
     align-items: center;
 }
 
+.ticket-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    margin: 2px;
+}
+
+.button-link {
+    text-decoration: none;
+}
+
 .link {
     height: 100%;
     width: 130px;

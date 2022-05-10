@@ -10,6 +10,15 @@ main {
     justify-content: center;
 }
 
+.radio-full-form {
+    display: flex;
+    text-align: left;
+    border-radius: 5px;
+    flex-direction: column;
+    padding: 10px 0 20px 20px;
+    border: 1px solid #ced4da;
+}
+
 label {
     margin-top: 10px;
 }
