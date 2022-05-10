@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Lato:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&family=Lato:wght@300&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/salesRegister.style.css">
     <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1 class="test">Giandrokaj Ticketverkauf</h1>
-        <a href="/ticket-anzeigen">bru</a>
+        <a href="/ticket-anzeigen" class="link">bru</a>
     </header>
     <main>
         <form method="post">
@@ -36,13 +40,16 @@
 
                 <label for="konzert">Konzert</label>
                 <select id="konzert" name="konzert">
-                    <% for (let i = 0; i < concerts.length; i++){ %> 
-                        <option value="<%- concerts[i].id %> "><%- concerts[i].artist %> </option>
-                    <% } %>
+                    <% for (let i=0; i < concerts.length; i++){ %>
+                        <option value="<%- concerts[i].id %> ">
+                            <%- concerts[i].artist %>
+                        </option>
+                        <% } %>
                 </select>
             </div>
             <button>Verkauf speichern</button>
         </form>
     </main>
 </body>
+
 </html>
