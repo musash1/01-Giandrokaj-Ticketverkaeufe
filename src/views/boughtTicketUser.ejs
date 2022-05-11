@@ -47,6 +47,14 @@
                 <p>
                     Zahlen bis: <%- tickets[i].zahlenBisDatum %>
                 </p>
+                <% if (tickets[i].zahlungsstatus=="Nicht bezahlt" && tickets[i].zahlenBisDatum>= new
+                    Date().toLocaleDateString("de-DE")) {%>
+                    ⏳
+                    <% } else if (tickets[i].zahlungsstatus=="Nicht bezahlt" && tickets[i].zahlenBisDatum < new
+                        Date().toLocaleDateString("de-DE")) { %>
+                        ⌛
+                        <% } %>
+
             </div>
             <% } %>
 
