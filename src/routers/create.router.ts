@@ -27,7 +27,6 @@ router.post(
   "/",
   body("name").isLength({ min: 3, max: 30 }).not().isEmpty().withMessage("Name is required"),
   body("email").isEmail().not().isEmpty().withMessage("Email is required"),
-  body("telefon").isLength({ min: 10, max: 21 }).optional(),
   body("konzert").isLength({ min: 1, max: 3 }).not().isEmpty().withMessage("Konzert is required"),
   async (req, res) => {
     const errors = validationResult(req);

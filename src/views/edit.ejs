@@ -44,7 +44,6 @@
 
                 <label for="konzert">Konzert</label>
                 <select id="konzert" class="form-select" name="konzert" required>
-                    <option value="" selected disabled>--Konzert auswählen--</option>
                     <% for (let i=0; i < concerts.length; i++){ %>
                         <option value="<%- concerts[i].id %> ">
                             <%- concerts[i].artist %>
