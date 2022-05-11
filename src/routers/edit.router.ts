@@ -29,19 +29,25 @@ router.get("/:id", async (req, res) => {
 
 router.post("/:id",
     async (req, res) => {
-        const ticket = await prisma.ticketkauf.update({
-            where: {
-                id: Number(req.params.id)
-            },
-            data: {
-                name: req.body.name,
-                email: req.body.email,
-                telefon: req.body.telefon,
-                treuebonus: Number(req.body.treuebonus),
-                konzertId: Number(req.body.konzert),
-                zahlungsstatus: req.body.zahlungsstatus,
-            }
-        })
-        res.redirect("/ticket-anzeigen");
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.redirect('/404')
+        }
+        else{
+            const ticket = await prisma.ticketkauf.update({
+                where: {
+                    id: Number(req.params.id)
+                },
+                data: {
+                    name: req.body.name,
+                    email: req.body.email,
+                    telefon: req.body.telefon,
+                    treuebonus: Number(req.body.treuebonus),
+                    konzertId: Number(req.body.konzert),
+                    zahlungsstatus: req.body.zahlungsstatus,
+                }
+            })
+            res.redirect("/ticket-anzeigen");
+        }  
     });
 export = router;

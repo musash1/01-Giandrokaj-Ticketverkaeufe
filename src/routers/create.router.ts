@@ -30,7 +30,6 @@ router.post(
   body("telefon").isLength({ min: 10, max: 21 }).optional(),
   body("konzert").isLength({ min: 1, max: 3 }).not().isEmpty().withMessage("Konzert is required"),
   async (req, res) => {
-
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.redirect('/404')
