@@ -41,16 +41,10 @@
                         <label for="nicht_bezahlt">Nicht bezahlt</label>
                     </div>
                 </div>
-                <label for="treuebonus">Treuebonus</label>
-                <select name="treuebonus" id="treuebonus" class="form-select">
-                    <option value="30" <% if (ticket.treuebonus == 30){ %> selected <% } %>>Kein Rabatt</option>
-                    <option value="20" <% if (ticket.treuebonus == 20){ %> selected <% } %>>5% Rabatt</option>
-                    <option value="15" <% if (ticket.treuebonus == 15){ %> selected <% } %>>10% Rabatt</option>
-                    <option value="10" <% if (ticket.treuebonus == 10){ %> selected <% } %>>15% Rabatt</option>
-                </select>
 
                 <label for="konzert">Konzert</label>
-                <select id="konzert" class="form-select" name="konzert">
+                <select id="konzert" class="form-select" name="konzert" required>
+                    <option value="" selected disabled>--Konzert auswählen--</option>
                     <% for (let i=0; i < concerts.length; i++){ %>
                         <option value="<%- concerts[i].id %> ">
                             <%- concerts[i].artist %>
