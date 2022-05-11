@@ -15,7 +15,11 @@ router.get("/:id", async (req, res) => {
 
     if (req.session != undefined) {
         if (req.session.loggedIn) {
-            res.render("edit", {ticket, concerts});
+            if (req.session.username === 'admin') {
+                res.render("edit", {ticket, concerts});
+            } else {
+                res.send('You are not privileged to view this page!');
+            }
         } else {
           res.send('Please login to view this page!');
         }

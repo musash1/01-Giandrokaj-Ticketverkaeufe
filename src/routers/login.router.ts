@@ -22,11 +22,11 @@ router.use(express.static(path.join(__dirname, 'static')));
 router.post("/", async (req, res) => {
     const user = await prisma.users.findUnique({
         where: {
-            name: req.body.username,
+            name: (req.body.username).trim(),
         }
     })
 
-    let username = req.body.username;
+    let username = (req.body.username).trim().toLowerCase();
     let password = req.body.password;
     
     if (username && password) {
@@ -34,8 +34,13 @@ router.post("/", async (req, res) => {
             if (req.session != undefined) {
                 req.session.loggedIn = true;
                 req.session.username = username;
+
+                if (req.session.username === 'admin') {
+                    res.redirect("/ticket-erfassen")
+                } else {
+                    res.redirect("/gekaufte-tickets");
+                }
             }
-            res.redirect("/ticket-erfassen")
         } else {
             res.send('Incorrect Username and/or Password!')
         }
