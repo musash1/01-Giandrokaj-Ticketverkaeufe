@@ -1,12 +1,21 @@
 import express from 'express'
 import { PrismaClient } from '@prisma/client'
+const session = require('express-session');
+const path = require('path');
 
 let router = express.Router();
 const prisma = new PrismaClient;
 
 router.get("/", async (req, res) => {
   const concerts = await prisma.konzert.findMany({});
-  res.render("salesRegister", {concerts});
+  if (req.session != undefined) {
+    if (req.session.loggedIn) {
+      res.render("salesRegister", {concerts});
+    } else {
+      res.send('Please login to view this page!');
+    }
+  } 
+
 });
 
 router.post("/", async (req, res) => {

@@ -12,7 +12,14 @@ router.get("/:id", async (req, res) => {
             id: Number(req.params.id)
         }
     });
-    res.render("edit", {ticket, concerts});
+
+    if (req.session != undefined) {
+        if (req.session.loggedIn) {
+            res.render("edit", {ticket, concerts});
+        } else {
+          res.send('Please login to view this page!');
+        }
+    } 
 });
 router.post("/:id", async (req, res) => {
     const ticket = await prisma.ticketkauf.update({
