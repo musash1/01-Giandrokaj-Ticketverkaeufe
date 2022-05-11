@@ -14,6 +14,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="/salesRegister.style.css">
     <link rel="stylesheet" href="/style.css">
+
     <title>Document</title>
 </head>
 
@@ -23,24 +24,24 @@
         <a href="/ticket-anzeigen" class="link">Ticket Sales</a>
     </header>
     <main>
-        <form method="post">
+        <form method="post" name="createForm" id="createFormID" class="createFormClass">
             <div class="registerSalesForm">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Name">
+                <input type="text" id="name" name="name" required class="nameClass" minlength="3" placeholder="Name">
 
                 <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail">
+                <input type="email" id="email" name="email" required class="emailClass" placeholder="test@mail.ch">
 
                 <label for="telefon">Telefonnummer</label>
-                <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefonnummer">
+                <input type="tel" id="telefon" name="telefon" pattern="^[0-9\s+\/\-)(]*$" class="tlfClass" placeholder="078 605 01 02">
                 <label for="zahlungsstatus">Zahlungsstatus</label>
                 <div class="radio-full-form" name="zahlungsstatus">
                     <div>
-                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt">
+                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt" class="bezahltClass">
                         <label for="bezahlt">Bezahlt</label>
                     </div>
                     <div>
-                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt">
+                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt" class="nichtBezahltClass">
                         <label for="nicht_bezahlt">Nicht bezahlt</label>
                     </div>
                 </div>
@@ -60,7 +61,8 @@
                         <% } %>
                 </select>
             </div>
-            <button class="btn btn-primary button">Verkauf speichern</button>
+            <button class="btn btn-primary button" id="salesButton" type="submit">Verkauf speichern</button>
+            </script>
         </form>
     </main>
 </body>

@@ -20,29 +20,29 @@
         <form method="post">
             <div class="registerSalesForm">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Name"
+                <input type="text" id="name-edit" name="name" required class="form-control" placeholder="Name"
                     value="<%- ticket.name %>">
 
                 <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="E-Mail"
+                <input type="email" id="email-edit" name="email" required class="form-control" placeholder="test@mail.ch"
                     value="<%- ticket.email %>">
 
                 <label for="telefon">Telefonnummer</label>
-                <input type="tel" id="telefon" name="telefon" class="form-control" placeholder="Telefonnummer"
+                <input type="tel" id="telefon-edit" name="telefon" class="form-control" pattern="^[0-9\s+\/\-)(]*$" placeholder="078 605 01 02"
                     value="<%- ticket.telefon %>">
                 <label for="zahlungsstatus">Zahlungsstatus</label>
                 <div class="radio-full-form" name="zahlungsstatus">
                     <div>
-                        <input type="radio" id="bezahlt" name="zahlungsstatus" value="Bezahlt" <% if(ticket.zahlungsstatus == "Bezahlt"){ %> checked <% } %>  >
+                        <input type="radio" id="bezahlt-edit" name="zahlungsstatus" value="Bezahlt" <% if(ticket.zahlungsstatus == "Bezahlt"){ %> checked <% } %>  >
                         <label for="bezahlt">Bezahlt</label>
                     </div>
                     <div>
-                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt" <% if(ticket.zahlungsstatus == "Nicht bezahlt"){ %> checked <% } %>>
+                        <input type="radio" id="nicht_bezahlt-edit" name="zahlungsstatus" value="Nicht bezahlt" <% if(ticket.zahlungsstatus == "Nicht bezahlt"){ %> checked <% } %>>
                         <label for="nicht_bezahlt">Nicht bezahlt</label>
                     </div>
                 </div>
                 <label for="treuebonus">Treuebonus</label>
-                <select name="treuebonus" id="treuebonus" class="form-select">
+                <select name="treuebonus" id="treuebonus-edit" class="form-select">
                     <option value="30" <% if (ticket.treuebonus == 30){ %> selected <% } %>>Kein Rabatt</option>
                     <option value="20" <% if (ticket.treuebonus == 20){ %> selected <% } %>>5% Rabatt</option>
                     <option value="15" <% if (ticket.treuebonus == 15){ %> selected <% } %>>10% Rabatt</option>
@@ -50,7 +50,7 @@
                 </select>
 
                 <label for="konzert">Konzert</label>
-                <select id="konzert" class="form-select" name="konzert">
+                <select id="konzert-edit" class="form-select" name="konzert">
                     <% for (let i=0; i < concerts.length; i++){ %>
                         <option value="<%- concerts[i].id %> ">
                             <%- concerts[i].artist %>
