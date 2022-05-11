@@ -7,6 +7,7 @@ import editRouter from "./routers/edit.router";
 import deleteRouter from "./routers/delete.router";
 import loginRouter from "./routers/login.router";
 import userRouter from "./routers/user.router";
+import errorRouter from "./routers/error.router";
 
 const app = express();
 const port: number = Number(process.env.PORT) || 3000;
@@ -28,6 +29,7 @@ app.use('/ticket-anzeigen', readRouter);
 app.use('/edit', editRouter);
 app.use('/delete', deleteRouter);
 app.use('/gekaufte-tickets', userRouter);
+app.use('/404', errorRouter);
 
 
 
