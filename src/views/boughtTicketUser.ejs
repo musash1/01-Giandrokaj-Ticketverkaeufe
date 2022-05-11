@@ -18,7 +18,9 @@
 </head>
 
 <body>
-    <header><a href="/" class="link">back</a></header>
+    <header>
+        <h1>Gekaufte Tickets</h1>
+    </header>
     <main>
         <% for (let i=0; i < tickets.length; i++){ %>
             <div class="ticket-anzeige">
@@ -45,12 +47,14 @@
                 <p>
                     Zahlen bis: <%- tickets[i].zahlenBisDatum %>
                 </p>
-                <div class="ticket-buttons">
-                    <button onclick="location.href = '/edit/' + <%- tickets[i].id %>"
-                        class="btn btn-primary button">Edit</button>
-                    <button onclick="location.href = '/delete/' + <%- tickets[i].id %> "
-                        class='btn btn-danger button'>delete</button>
-                </div>
+                <% if (tickets[i].zahlungsstatus=="Nicht bezahlt" && tickets[i].zahlenBisDatum>= new
+                    Date().toLocaleDateString("de-DE")) {%>
+                    ⏳
+                    <% } else if (tickets[i].zahlungsstatus=="Nicht bezahlt" && tickets[i].zahlenBisDatum < new
+                        Date().toLocaleDateString("de-DE")) { %>
+                        ⌛
+                        <% } %>
+
             </div>
             <% } %>
 

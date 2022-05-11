@@ -27,13 +27,16 @@
         <form method="post" name="createForm" id="createFormID" class="createFormClass">
             <div class="registerSalesForm">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required class="nameClass" minlength="3" placeholder="Name">
+                <input type="text" id="name" name="name" required class="nameClass form-control" minlength="3"
+                    placeholder="Name">
 
                 <label for="email">E-Mail</label>
-                <input type="email" id="email" name="email" required class="emailClass" placeholder="test@mail.ch">
+                <input type="email" id="email" name="email" required class="emailClass form-control"
+                    placeholder="test@mail.ch">
 
                 <label for="telefon">Telefonnummer</label>
-                <input type="tel" id="telefon" name="telefon" pattern="^[0-9\s+\/\-)(]*$" class="tlfClass" placeholder="078 605 01 02">
+                <input type="tel" id="telefon" name="telefon" pattern="^[0-9\s+\/\-)(]*$" class="tlfClass form-control"
+                    placeholder="078 605 01 02">
                 <label for="zahlungsstatus">Zahlungsstatus</label>
                 <div class="radio-full-form" name="zahlungsstatus">
                     <div>
@@ -41,7 +44,8 @@
                         <label for="bezahlt">Bezahlt</label>
                     </div>
                     <div>
-                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt" class="nichtBezahltClass">
+                        <input type="radio" id="nicht_bezahlt" name="zahlungsstatus" value="Nicht bezahlt"
+                            class="nichtBezahltClass">
                         <label for="nicht_bezahlt">Nicht bezahlt</label>
                     </div>
                 </div>
@@ -54,6 +58,7 @@
                 </select>
                 <label for="konzert">Konzert</label>
                 <select id="konzert" class="form-select" name="konzert">
+                    <option value="" selected disabled>--Konzert auswählen--</option>
                     <% for (let i=0; i < concerts.length; i++){ %>
                         <option value="<%- concerts[i].id %> ">
                             <%- concerts[i].artist %>
