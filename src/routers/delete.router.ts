@@ -10,7 +10,14 @@ router.get("/:id", async (req, res) => {
             id: Number(req.params.id)
         }
     })
-    res.redirect("/ticket-anzeigen");
+
+    if (req.session != undefined) {
+        if (req.session.loggedIn) {
+            res.redirect("/ticket-anzeigen");
+        } else {
+          res.send('Please login to view this page!');
+        }
+    } 
 });
 
 export = router;

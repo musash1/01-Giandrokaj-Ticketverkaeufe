@@ -8,7 +8,13 @@ router.get("/", async (req, res) => {
     const konzert = await prisma.konzert.findMany({});
     const tickets = await prisma.ticketkauf.findMany({});
 
-    res.render("showSales", {tickets, konzert});
-    });
+    if (req.session != undefined) {
+        if (req.session.loggedIn) {
+            res.render("showSales", {tickets, konzert});
+        } else {
+          res.send('Please login to view this page!');
+        }
+    } 
+});
 
 export = router;
