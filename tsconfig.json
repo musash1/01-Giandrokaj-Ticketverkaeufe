@@ -19,7 +19,7 @@
   },
   "include": [
     "src/**/*"
-  ],
+, "js/validation.js"  ],
   "exclude": [
     "node_modules"
   ]

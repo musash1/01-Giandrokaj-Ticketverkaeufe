@@ -4,8 +4,10 @@ import { body, check, validationResult } from "express-validator";
 
 let router = express.Router();
 const prisma = new PrismaClient;
+ 
 
-router.get("/:id", async (req, res) => {
+router.get("/:id",
+ async (req, res) => {
     
     const concerts = await prisma.konzert.findMany({});
     const ticket = await prisma.ticketkauf.findUnique({
